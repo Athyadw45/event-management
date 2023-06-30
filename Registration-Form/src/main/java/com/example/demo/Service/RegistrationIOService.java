@@ -14,13 +14,13 @@ public class RegistrationIOService {
 	@Autowired
 	private RegistrationIORepo registrationIOrepo;
 	
-	public void savedata() {
-		RegistrationIO user = new RegistrationIO();
-		
-		user.setEmpId(1);
-		user.setAddress("AH1/77 n2 thakare nagar");
-		user.setAlternatePhoneNo(45654);
-		user.setCity("Aurangabad");
+	public void savedata(RegistrationIO user) {
+//		RegistrationIO user = new RegistrationIO();
+//		
+//		user.setEmpId(1);
+//		user.setAddress("AH1/77 n2 thakare nagar");
+//		user.setAlternatePhoneNo(45654);
+//		user.setCity("Aurangabad");
 		
 		
 		
