@@ -5,12 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.util.Random;
 @Entity
 //@Table(name="Registration")
 
 public class RegistrationIO {
-	//Personal Details
-	
+	//Personal Details	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int empId;

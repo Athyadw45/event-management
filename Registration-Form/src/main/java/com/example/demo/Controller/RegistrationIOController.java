@@ -23,9 +23,10 @@ public class RegistrationIOController {
 	}
 	
 	@RequestMapping(value="/add" , method= RequestMethod.POST)
-	public String addData( @RequestBody String payload) throws Exception {
-		System.out.println(payload);
-		RegistrationIO user = new RegistrationIO();
+	public String addData( @RequestBody RegistrationIO user) throws Exception {
+//		System.out.println(user);
+		
+//		RegistrationIO user = new RegistrationIO();
 		
 		
 		//add payload fields to user object
