@@ -19,11 +19,11 @@ public class RegistrationIOService {
 //		RegistrationIO user = new RegistrationIO();
 //		
 //		user.setEmpId(1);
-//		user.setAddress("AH1/77 n2 thakare nagar");
+//		user.setAddress("Cannaught Place");
 //		user.setAlternatePhoneNo(45654);
-//		user.setCity("Aurangabad");
-		Random rand = new Random();
-		user.setEmpId(rand.nextInt());
+//		user.setCity("Delhi");
+//		Random rand = new Random();
+//		user.setEmpId(rand.nextInt());
 		
 		
 		

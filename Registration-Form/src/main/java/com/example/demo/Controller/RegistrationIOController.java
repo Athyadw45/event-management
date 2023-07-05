@@ -2,6 +2,8 @@ package com.example.demo.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +13,7 @@ import com.example.demo.Entity.RegistrationIO;
 import com.example.demo.Service.RegistrationIOService;
 
 @RestController
+//@Controller
 public class RegistrationIOController {
 	
 	@Autowired
@@ -24,14 +27,6 @@ public class RegistrationIOController {
 	
 	@RequestMapping(value="/add" , method= RequestMethod.POST)
 	public String addData( @RequestBody RegistrationIO user) throws Exception {
-//		System.out.println(user);
-		
-//		RegistrationIO user = new RegistrationIO();
-		
-		
-		//add payload fields to user object
-		
-		
 		
 		registrationIOservice.savedata(user);
 		
@@ -42,4 +37,9 @@ public class RegistrationIOController {
 	public List<RegistrationIO> showAll(){
 		return registrationIOservice.showAll();
 	}
+	
+//	@GetMapping("/welcome")
+//	public String demo() {
+//		return "demo";
+//	}
 }

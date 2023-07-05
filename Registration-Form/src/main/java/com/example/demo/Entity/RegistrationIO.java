@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.util.Random;
 @Entity
 //@Table(name="Registration")
 
@@ -28,8 +27,8 @@ public class RegistrationIO {
 	
 	//Contact Details
 	String email;
-	int phoneNo;
-	int alternatePhoneNo;
+	String phoneNo;
+	String alternatePhoneNo;
 	
 	//Address
 	String address;
@@ -50,19 +49,19 @@ public class RegistrationIO {
 	
 	
 	//Parameterized Constructor
-	public RegistrationIO(int empId, String firstName, String middleName, String lastName, String dOB, String gender,
-			String joiningDate, String department, String designation, String email, int phoneNo, int alternatePhoneNo,
+	public RegistrationIO(int empId, String firstName, String middleName, String lastName, String DOB, String gender,
+			String joiningDate, String department, String Designation, String email, String phoneNo, String alternatePhoneNo,
 			String address, String city, String state, int pinCode, String password, String confirmPassword) {
 		super();
 		this.empId = empId;
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.lastName = lastName;
-		DOB = dOB;
+		this.DOB = DOB;
 		this.gender = gender;
 		this.joiningDate = joiningDate;
 		this.department = department;
-		Designation = designation;
+		this.Designation = Designation;
 		this.email = email;
 		this.phoneNo = phoneNo;
 		this.alternatePhoneNo = alternatePhoneNo;
@@ -122,8 +121,8 @@ public class RegistrationIO {
 	}
 
 
-	public void setDOB(String dOB) {
-		DOB = dOB;
+	public void setDOB(String DOB) {
+		this.DOB = DOB;
 	}
 
 
@@ -162,8 +161,8 @@ public class RegistrationIO {
 	}
 
 
-	public void setDesignation(String designation) {
-		Designation = designation;
+	public void setDesignation(String Designation) {
+		this.Designation = Designation;
 	}
 
 
@@ -177,22 +176,22 @@ public class RegistrationIO {
 	}
 
 
-	public int getPhoneNo() {
+	public String getPhoneNo() {
 		return phoneNo;
 	}
 
 
-	public void setPhoneNo(int phoneNo) {
+	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 
 
-	public int getAlternatePhoneNo() {
+	public String getAlternatePhoneNo() {
 		return alternatePhoneNo;
 	}
 
 
-	public void setAlternatePhoneNo(int alternatePhoneNo) {
+	public void setAlternatePhoneNo(String alternatePhoneNo) {
 		this.alternatePhoneNo = alternatePhoneNo;
 	}
 
