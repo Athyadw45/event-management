@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  springapi:
+    container_name: springapp
+    build: ./
+    restart: on-failure
+    network_mode: "host"
+    ports:
+      - 8081:8080
