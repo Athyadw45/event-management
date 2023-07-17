@@ -4,9 +4,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Entity.RegistrationIO;
@@ -37,6 +39,20 @@ public class RegistrationIOController {
 	public List<RegistrationIO> showAll(){
 		return registrationIOservice.showAll();
 	}
+	
+	@RequestMapping("/update/{id}")
+	@ResponseBody
+	public RegistrationIO updateUser (@PathVariable("id")int id) {
+		return registrationIOservice.update(id);
+	}
+	
+	@RequestMapping("/delete/{id}")
+	@ResponseBody
+	public String deleteRecord(@PathVariable("id")int id) {
+			registrationIOservice.delete(id);
+		return "record deleted successfully :"+id;
+	}
+		
 	
 //	@GetMapping("/welcome")
 //	public String demo() {

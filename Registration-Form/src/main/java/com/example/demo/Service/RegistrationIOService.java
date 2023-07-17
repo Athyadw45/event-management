@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,27 @@ public class RegistrationIOService {
 		return registrationIOrepo.findAll();  	
 	}
 	
+	//method for updating records
+	public RegistrationIO update(int id) {
+		//fetching existing records
+		Optional<RegistrationIO> updateUser = registrationIOrepo.findById(id);
+		RegistrationIO existingUser = updateUser.get();
+		
+		//setting updated values for entity
+		existingUser.setCity("Mumbai");
+		existingUser.setFirstName("Rohit");
+		
+		//save updated records
+		
+		registrationIOrepo.save(existingUser);
+		return existingUser;
+	}
+	
+	//method for deleting records
+	
+	public String delete(int id) {
+		registrationIOrepo.deleteById(id);
+		return "deleted successfully";
+	}
 	
 }
