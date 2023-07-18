@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,6 +45,13 @@ public class RegistrationIOController {
 	@ResponseBody
 	public RegistrationIO updateUser (@PathVariable("id")int id) {
 		return registrationIOservice.update(id);
+	}
+	
+	@GetMapping("/showUsers")
+	public String showAllUsers(Model model){
+		List<RegistrationIO> users=registrationIOservice.showAll();
+		model.addAttribute("users", users);
+		return "demo2";
 	}
 	
 	@RequestMapping("/delete/{id}")
