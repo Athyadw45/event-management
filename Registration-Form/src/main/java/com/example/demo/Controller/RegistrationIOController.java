@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Entity.RegistrationIO;
 import com.example.demo.Service.RegistrationIOService;
 
-@RestController
-//@Controller
+//@RestController
+@Controller
 public class RegistrationIOController {
 	
 	@Autowired
@@ -29,6 +30,7 @@ public class RegistrationIOController {
 	}
 	
 	@RequestMapping(value="/add" , method= RequestMethod.POST)
+	@ResponseBody
 	public String addData( @RequestBody RegistrationIO user) throws Exception {
 		
 		registrationIOservice.savedata(user);
@@ -36,6 +38,7 @@ public class RegistrationIOController {
 		return "Records added successfully";
 	}
 	
+	@ResponseBody
 	@RequestMapping("/show")
 	public List<RegistrationIO> showAll(){
 		return registrationIOservice.showAll();
@@ -51,7 +54,7 @@ public class RegistrationIOController {
 	public String showAllUsers(Model model){
 		List<RegistrationIO> users=registrationIOservice.showAll();
 		model.addAttribute("users", users);
-		return "demo2";
+		return "luna"; 
 	}
 	
 	@RequestMapping("/delete/{id}")
@@ -59,6 +62,21 @@ public class RegistrationIOController {
 	public String deleteRecord(@PathVariable("id")int id) {
 			registrationIOservice.delete(id);
 		return "record deleted successfully :"+id;
+	}
+	
+	@GetMapping("/Register")
+	public String registration() {
+		return "regiForm";
+		
+	}
+	
+	//for adding data into form
+	@PostMapping("/addusers")
+	public String addUsers(RegistrationIO user)
+	{
+		registrationIOservice.savedata(user);
+		return "redirect:/showUsers" ;
+			
 	}
 		
 	

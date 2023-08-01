@@ -13,7 +13,7 @@
      
      
      
-       <form th:action="@{/addName}">
+       <form th:action="@{/addusers}">
         
         <label for="name">Enter your name</label>
         <input type="text" class="form-control-file" id="name" name="firstName">
@@ -27,19 +27,49 @@
   <thead>
     <tr>
       <th scope="col">Sr.NO</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Emp Id</th>
+      <th scope="col">First name</th>
+      <th scope="col">Middle Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Joining Date</th>
+      <th scope="col">Department</th>
+      <th scope="col">Designation</th>
+      <th scope="col">PhoneNo</th>
+      <th scope="col">AlternatePhoneNo</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Pin Code</th>
+      <th scope="col">Password</th>
+      <th scope="col">Confirm Password</th>
+      
     </tr>
   </thead>
   
   <tbody>
       <tr th:each="user:${users}" >
       <th scope="row">1</th>
-       <td th:text="${user.id}"></td>
+       <td th:text="${user.empId}"></td>
        <td th:text="${user.firstName}"></td>
-       <td th:text="${user.lastName}"></td>
+       <td th:text="${user.middleName}"></td>
+	   <td th:text="${user.lastName}"></td>
+       <td th:text="${user.DOB}"></td>
+       <td th:text="${user.gender}"></td>
+       <td th:text="${user.joiningDate}"></td>
+       <td th:text="${user.department}"></td>
+       <td th:text="${user.Designation}"></td>
+       <td th:text="${user.phoneNo}"></td>
+       <td th:text="${user.alternatePhoneNo}"></td>
        <td th:text="${user.email}"></td>
+       <td th:text="${user.address}"></td>
+       <td th:text="${user.city}"></td>
+       <td th:text="${user.state}"></td>
+       <td th:text="${user.pinCode}"></td>
+       <td th:text="${user.password}"></td>
+       <td th:text="${user.confirmPassword}"></td>
     </tr>
     
   </tbody>
