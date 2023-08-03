@@ -25,6 +25,7 @@ public class RegistrationIOController {
 	
 	
 	@RequestMapping("/hi")
+	@ResponseBody
 	public String hi() {
 		return "Welcome...";
 	}

@@ -11,3 +11,9 @@ services:
       
     environment:
       - spring.datasource.url=jdbc:mysql://host.docker.internal:3306/EventMS
+       
+      
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+      
+    
