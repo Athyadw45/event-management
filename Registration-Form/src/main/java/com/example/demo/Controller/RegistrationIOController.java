@@ -67,7 +67,7 @@ public class RegistrationIOController {
 	
 	@GetMapping("/Register")
 	public String registration() {
-		return "regiForm";
+		return "main";
 		
 	}
 	

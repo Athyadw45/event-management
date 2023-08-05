@@ -22,7 +22,6 @@ public class RegistrationIO {
 	//Office Details
 	@Column
 	String joiningDate;
-	String department;
 	String Designation;
 	
 	//Contact Details
@@ -38,7 +37,6 @@ public class RegistrationIO {
 	
 	//Default Password(By Admin)
 	String password;
-	String confirmPassword;
 	
 	
 	
@@ -50,8 +48,8 @@ public class RegistrationIO {
 	
 	//Parameterized Constructor
 	public RegistrationIO(int empId, String firstName, String middleName, String lastName, String DOB, String gender,
-			String joiningDate, String department, String Designation, String email, String phoneNo, String alternatePhoneNo,
-			String address, String city, String state, int pinCode, String password, String confirmPassword) {
+			String joiningDate, String Designation, String email, String phoneNo, String alternatePhoneNo,
+			String address, String city, String state, int pinCode, String password) {
 		super();
 		this.empId = empId;
 		this.firstName = firstName;
@@ -60,7 +58,6 @@ public class RegistrationIO {
 		this.DOB = DOB;
 		this.gender = gender;
 		this.joiningDate = joiningDate;
-		this.department = department;
 		this.Designation = Designation;
 		this.email = email;
 		this.phoneNo = phoneNo;
@@ -70,7 +67,6 @@ public class RegistrationIO {
 		this.state = state;
 		this.pinCode = pinCode;
 		this.password = password;
-		this.confirmPassword = confirmPassword;
 	}
 
 	
@@ -143,16 +139,6 @@ public class RegistrationIO {
 
 	public void setJoiningDate(String joiningDate) {
 		this.joiningDate = joiningDate;
-	}
-
-
-	public String getDepartment() {
-		return department;
-	}
-
-
-	public void setDepartment(String department) {
-		this.department = department;
 	}
 
 
@@ -245,25 +231,14 @@ public class RegistrationIO {
 		this.password = password;
 	}
 
-
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
-
 	//ToString Method
 	@Override
 	public String toString() {
 		return "RegistrationIO [empId=" + empId + ", firstName=" + firstName + ", middleName=" + middleName
 				+ ", lastName=" + lastName + ", DOB=" + DOB + ", gender=" + gender + ", joiningDate=" + joiningDate
-				+ ", department=" + department + ", Designation=" + Designation + ", email=" + email + ", phoneNo="
+				+ ", department=" + ", Designation=" + Designation + ", email=" + email + ", phoneNo="
 				+ phoneNo + ", alternatePhoneNo=" + alternatePhoneNo + ", address=" + address + ", city=" + city
-				+ ", state=" + state + ", pinCode=" + pinCode + ", password=" + password + ", confirmPassword="
-				+ confirmPassword + "]";
+				+ ", state=" + state + ", pinCode=" + pinCode + ", password=" + password + "]";
 	}
 	
 

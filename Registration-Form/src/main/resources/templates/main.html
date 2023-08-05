@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <body>
+        <header>
+            <nav>
+                <ul>
+					
+                    <li><big>FIREFLY EVENTS</big></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#registration">Registration</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+
+                </ul>
+            </nav>
+        </header>
+         
+    <main>
+
+        <h1>Registration Form</h1>
+        <form class="border p-4" th:action="@{/addusers}" method="post">
+            <div class="head">
+                <h2>Enter Your Details:</h2>
+            </div>
+            <div class="form group">
+                <!--FIRST NAME------------------>
+                <small>First Name :</small><label>*</label><br>
+                <input type="text" id="firstName" name="FirstName" class="form-control" onkeydown="checkKey(event, 'middleName')" placeholder="First Name" required>
+            </div>
+
+                <!--MIDDLE NAME--------------------->
+                <div class="form group">
+                    <small>Middle Name :</small><label>*</label><br>
+                    <input type="text" id="middleName" name="MiddleName" class="form-control" onkeydown="checkKey(event, 'lastName')" placeholder="Middle Name" required>
+                </div>
+
+                    <!--LASTNAME------------------------>
+                    <div class="form group">
+                        <small>Last Name :</small><label>*</label><br>
+                        <input type="text" id="lastName" name="lastName" onkeydown="checkKey(event)" class="form-control" placeholder="Last Name" required>
+                    </div>
+
+                <div class="form group">
+<!--DOB-->      <small>Date Of Birth :</small><label>*</label>
+                <input type="date" name="DOB" class="form-control" required>
+                </div>
+
+                    <div class="form group">
+                    <small>Select Your Gender :</small>
+                    <label>*</label>
+                    <br>
+                    <input type="radio" name="Gender" id="Gender" value="Male" >
+                    <small for="Gender">Male</small>
+<!--GENDER-->       <input type="radio" name="Gender" id="Gender1" value="Female">
+                    <small for="Gender1">Female</small>
+                    <input type="radio" name="Gender" id="Gender2" value="other" >
+                    <small for="Gender2">Other</small>
+                    </div>
+
+                        <div class="form group">
+                        <small>Designation :</small><label>*</label>
+                        <select name="Designation" id="Designation" class="form-select" required>
+                        <option value="not selected">Select Designation</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Volunteer">Volunteer</option>
+<!--DESIGNATION-->      <option value="worker">Worker</option>
+                        <option value="Director">Director</option>
+                        <option value="Vender">Vender</option>
+                        <option value="secretary">Secretary</option>
+                        </select>
+                        </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <h2>Enter Contact Details:</h2>
+                            </div>
+
+                            <div class="form group">
+<!--EMAIL-->                    <small>Email :</small><label>*</label><br>
+                                <input type="email" name="Email" id="email" placeholder="Email" class="form-control" required>
+                            </div>
+
+                                <div class="form group">
+<!--NUMBER-->                       <small>Phone Number :</small><label>*</label><br>
+                                    <input type="text" name="phoneNo" id="phoneNumber" placeholder="Phone Number" class="form-control" required>
+                                </div>
+
+                                    <div class="form group">
+<!--ALT NUMBER-->                       <small>Alternate Phone Number:</small><br>
+                                        <input type="text" name="alternatePhoneNo" id="alt_PhoneNumber" placeholder="Alternate Phone Number" class="form-control" >
+                                    </div>
+
+                                        <div class="form group">
+                                            <small>Date Of Joining :</small><label>*</label>
+<!--DATE OF JOINING-->                      <input type="date" name="joiningDate" id="JoiningDate" class="form-control" required>
+                                        </div>
+
+                                            <div class="">
+                                                <h2>Address Information :</h2>
+                                                <small>Country:</small><label>*</label>
+<!--COUNTRY-->                                  <select name="country" class="countries form-control" id="countryId">
+                                                <small>Country: </small><label>*</label>
+                                                <option value=""> Country</option>
+                                               </select>
+
+                                                    <small>Select State:</small><label>*</label>
+<!--STATE-->                                          <select name="state" class="states form-control" id="stateId">
+                                                     <option value="">State</option>
+                                                    </select>
+
+                                            <small>Select City:</small><label>*</label>
+<!--CITY-->                                                 <select name="city" class="cities form-control" id="cityId">
+                                             <option value="">City</option>
+                                            </select>
+
+                                        <div>
+                                        <small>Pincode</small><label>*</label>
+<!--PINCODE-->                                      <input type="text" id="pinCode" name="pinCode" required class="form-control">
+                                         <small>Address</small>
+                                         <input type="text" id="address" name="address" class="form-control">
+                                        </div>
+
+                                    <div class="form group">
+                                        <small>Password :</small><label>*</label><br>
+<!--PASSWORD-->                                  <input type="password" name="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" placeholder="Enter Password" class="form-control" required>
+                                        <small id="password-help" class="form-text text-muted">Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.</small>
+                                    </div>
+
+                                 <div class="form group">
+<!--CONFIRM PASS-->                             <small>Confirm Password:</small><label>*</label><br>
+                                     <input type="password" name="RePassword" id="RePassword" placeholder="Re-enter Password" class="form-control" required>
+                                 </div>
+
+                            <div style="margin-top: 20px;"> <!-- Add margin to create space -->
+                             <button class="big-button"><big>Submit</big></button>
+                            </div>
+
+                    </form>
+                    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>Contact us: Phone: 550440044</p>
+            <p>Email: example@example.com</p>
+        </div>
+    </footer>
+</body>
+<style>
+    body {
+    background-image: url("data:image/jpeg;base64,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"); /* Replace "path_to_your_background_image.jpg" with the actual path or URL of your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+    
+html,
+body,
+    h1 {
+        height: 220%;
+        margin:0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        h1 {
+            max-width: 2000px;
+            margin: 0auto;
+            padding: 20px;
+            background-color:#fcf0f8;
+            font-family: 'athelas', cursive;
+            color: #00008B; /* Dark blue text color */
+        }
+
+            form {
+                max-width: 2000px;
+                margin: 0 auto;
+                padding: px;
+                background-color:#fcf0f8;
+                font-family: 'Times new roman', cursive;
+                color: #00008B;
+            }
+
+                form p {
+                    color: #00008B; /* Dark blue text color */
+                }
+
+                     .registration-form h2 {
+                         text-align: center;
+                         margin-bottom: 20px;
+                     }
+
+                .form-group {
+                    margin-bottom: 15px;
+                }
+
+            .form-group label {
+                display: block;
+                font-weight: bold;
+            }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #d01184;
+            border-radius: 4px;
+        }
+
+    .form-group input[type="submit"] {
+        background-color: rgb(10,9,68);
+        color: #fff;
+        cursor: pointer;
+    
+    }
+
+
+
+
+header {
+background-color: darkblue;
+color: white;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+font-family: athelas;
+}
+
+nav {
+display: flex;
+justify-content: space-around;
+padding: 10px;
+}
+
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+nav ul li {
+display: inline;
+}
+
+nav ul li a {
+color: white;
+text-decoration: none;
+padding: 10px;
+}
+
+nav ul li a:hover {
+background-color: white;
+color: blue;
+}
+
+footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 50px;
+background-color: darkblue;
+color: white;
+padding: 10px;
+text-align: center;
+font-family: 'athelas', cursive;
+font-size: 15px;
+}
+
+.contact-info {
+display: flex;
+justify-content: center;
+}
+
+.contact-info p {
+margin: 5px;
+}
+
+h3{
+font-size: 50px;
+}
+.big-button {
+        width: 820px; /* Adjust the width as desired */
+        height: 50px; /* Adjust the height as desired */
+        background-color: darkblue;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+label{
+color:darkred;
+}
+</style>
+<script>
+    
+function ajaxCall() {
+    this.send = function(data, url, method, success, type) {
+        type = 'json';
+        var successRes = function(data) {
+            success(data);
+        }
+
+        var errorRes = function(xhr, ajaxOptions, thrownError) {
+           
+            console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+
+        }
+        jQuery.ajax({
+            url: url,
+            type: method,
+            data: data,
+            success: successRes,
+            error: errorRes,
+            dataType: type,
+            timeout: 60000
+        });
+
+    }
+
+}
+
+//--------------------------------VALIDATING FIRST/MIDDLE/LASTNAME---------------------------------------->
+function validateName(nameInput) {
+    const namePattern = /^[A-Z][a-z]*$/;
+    return namePattern.test(nameInput);
+}
+
+function checkKey(event, nextFieldId) {
+    if (event.key === "Enter" || event.key === "Tab") {
+        event.preventDefault(); // Prevent the default behavior (e.g., moving to the next field on Tab press)
+
+        const currentField = event.target;
+        const nextField = document.getElementById(nextFieldId);
+
+        if (validateName(currentField.value)) {
+            if (nextField) {
+                nextField.focus();
+            } else {
+                true;
+            }
+        } else {
+            alert("Invalid name. Please enter a single word with the first letter capitalized.");
+        }
+    }
+}
+
+//-----------------PHONE NUMBER VALIDATION--------------------------------------------------------------------->
+function phonenumber(inputtxt)
+{
+  var phoneno = /^\d{10}$/;
+  if(inputtxt.value.match(phoneno))
+  {
+      return true;
+  }
+  else
+  {
+     alert("Not a valid Phone Number");
+     return false;
+  }
+  }
+
+
+
+
+
+
+
+
+
+
+//API FOR COUNTRIES/STATES/CITIES
+function locationInfo() {
+    var rootUrl = "https://geodata.phplift.net/api/index.php";
+    var call = new ajaxCall();
+
+
+
+    this.getCities = function(id) {
+        jQuery(".cities option:gt(0)").remove();
+        //get additional fields
+       
+        var url = rootUrl+'?type=getCities&countryId='+ '&stateId=' + id;
+        var method = "post";
+        var data = {};
+        jQuery('.cities').find("option:eq(0)").html("Please wait..");
+        call.send(data, url, method, function(data) {
+            data['result'] = data['result'].sort(function(a,b) {
+              return a[1].localeCompare(b[1])
+            });
+            jQuery('.cities').find("option:eq(0)").html("Select City");
+                var listlen = Object.keys(data['result']).length;
+
+                if(listlen > 0)
+                {
+                    jQuery.each(data['result'], function(key, val) {
+
+                        var option = jQuery('<option />');
+                        option.attr('value', val.name).text(val.name);
+                        jQuery('.cities').append(option);
+                    });
+                }
+               
+
+                jQuery(".cities").prop("disabled",false);
+           
+        });
+    };
+
+    this.getStates = function(id) {
+        jQuery(".states option:gt(0)").remove();
+        jQuery(".cities option:gt(0)").remove();
+        //get additional fields
+        var stateClasses = jQuery('#stateId').attr('class');
+
+
+        var url = rootUrl+'?type=getStates&countryId=' + id;
+        var method = "post";
+        var data = {};
+        jQuery('.states').find("option:eq(0)").html("Please wait..");
+        call.send(data, url, method, function(data) {
+            data['result'] = data['result'].sort(function(a,b) {
+              return a[1].localeCompare(b[1])
+            });
+            jQuery('.states').find("option:eq(0)").html("Select State");
+           
+                jQuery.each(data['result'], function(key, val) {
+                    var option = jQuery('<option />');
+                    option.attr('value', val.name).text(val.name);
+                    option.attr('stateid', val.id);
+                    jQuery('.states').append(option);
+                });
+                jQuery(".states").prop("disabled",false);
+           
+        });
+    };
+
+    this.getCountries = function() {
+        var url = rootUrl+'?type=getCountries';
+        var method = "post";
+        var data = {};
+        jQuery('.countries').find("option:eq(0)").html("Please wait..");
+        call.send(data, url, method, function(data) {
+            data['result'] = data['result'].sort(function(a,b) {
+              return a[1].localeCompare(b[1])
+            });
+            jQuery('.countries').find("option:eq(0)").html("Select Country");
+           
+            jQuery.each(data['result'], function(key, val) {
+                var option = jQuery('<option />');
+               
+                option.attr('value', val.name).text(val.name);
+                option.attr('countryid', val.id);
+               
+                jQuery('.countries').append(option);
+            });
+                // jQuery(".countries").prop("disabled",false);
+           
+        });
+    };
+
+}
+
+
+
+jQuery(function() {
+    var loc = new locationInfo();
+    loc.getCountries();
+    jQuery(".countries").on("change", function(ev) {
+        var countryId = jQuery("option:selected", this).attr('countryid');
+        if(countryId != ''){
+            loc.getStates(countryId);
+        }
+        else{
+            jQuery(".states option:gt(0)").remove();
+        }
+    });
+    jQuery(".states").on("change", function(ev) {
+        var stateId = jQuery("option:selected", this).attr('stateid');
+        if(stateId != ''){
+            loc.getCities(stateId);
+        }
+        else{
+            jQuery(".cities option:gt(0)").remove();
+        }
+    });
+});
+
+</script>

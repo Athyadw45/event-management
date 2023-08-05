@@ -7,7 +7,7 @@
 	
 	<body>
 		
-       <h1>Welcome!!,this is html page.</h1>
+       <h1>Employee List:</h1>
        
        <h1 th:text="${messaege}"></h1>
         
@@ -23,7 +23,6 @@
       <th scope="col">DOB</th>
       <th scope="col">Gender</th>
       <th scope="col">Joining Date</th>
-      <th scope="col">Department</th>
       <th scope="col">Designation</th>
       <th scope="col">PhoneNo</th>
       <th scope="col">AlternatePhoneNo</th>
@@ -33,7 +32,6 @@
       <th scope="col">State</th>
       <th scope="col">Pin Code</th>
       <th scope="col">Password</th>
-      <th scope="col">Confirm Password</th>
       
     </tr>
   </thead>
@@ -48,7 +46,6 @@
        <td th:text="${user.DOB}"></td>
        <td th:text="${user.gender}"></td>
        <td th:text="${user.joiningDate}"></td>
-       <td th:text="${user.department}"></td>
        <td th:text="${user.Designation}"></td>
        <td th:text="${user.phoneNo}"></td>
        <td th:text="${user.alternatePhoneNo}"></td>
@@ -58,7 +55,6 @@
        <td th:text="${user.state}"></td>
        <td th:text="${user.pinCode}"></td>
        <td th:text="${user.password}"></td>
-       <td th:text="${user.confirmPassword}"></td>
     </tr>
     
   </tbody>
