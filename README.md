@@ -42,7 +42,7 @@ Containerization Tool: Containerized the Springboot Application using docker-com
 
 ## :building_construction: Architecture
 
-![sysarch](assets/system_arch.png?raw=true "sysarch")
+![sysarch](assets/diagramarch.png?raw=true "sysarch")
 
 
 ## 💪🏽 Team 
