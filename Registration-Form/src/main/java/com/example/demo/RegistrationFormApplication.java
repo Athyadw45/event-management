@@ -12,4 +12,4 @@ public class RegistrationFormApplication {
 		System.out.println("Testing...");
 
 	}
-
+}
