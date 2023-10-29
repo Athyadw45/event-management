@@ -1,6 +1,6 @@
 # event-management
 
-We have created a simple Springboot REST API service for Employee Registration of a event management website
+We have created a simple Springboot REST API service for Employee Registration of a event management website.
 
 
 ## To build and run the project (Linux)
