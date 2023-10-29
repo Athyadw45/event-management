@@ -45,11 +45,6 @@ public class RegistrationIOController {
 		return registrationIOservice.showAll();
 	}
 	
-	@RequestMapping("/update/{id}")
-	@ResponseBody
-	public RegistrationIO updateUser (@PathVariable("id")int id) {
-		return registrationIOservice.update(id);
-	}
 	
 	@GetMapping("/showUsers")
 	public String showAllUsers(Model model){
@@ -58,12 +53,7 @@ public class RegistrationIOController {
 		return "luna"; 
 	}
 	
-	@RequestMapping("/delete/{id}")
-	@ResponseBody
-	public String deleteRecord(@PathVariable("id")int id) {
-			registrationIOservice.delete(id);
-		return "record deleted successfully :"+id;
-	}
+
 	
 	@GetMapping("/Register")
 	public String registration() {
