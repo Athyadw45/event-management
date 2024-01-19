@@ -163,6 +163,7 @@ public class RegistrationIO {
 
 
 	public String getPhoneNo() {
+		// return phone no
 		return phoneNo;
 	}
 
